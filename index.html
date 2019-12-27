@@ -9,28 +9,8 @@
 </head>
 <body>
  <div class="wrapper">
-   <header class="header">
-     <div class="logo">
-       <a href="" class="logo-link">
-         <img src="img/me.jpg" alt="" class="logo-image">
-       </a>
-     </div>
-     <div class="accountInfo">
-       <div class="accountInfo-top">
-         <div class="accountInfo-username">natali_bystrova</div>
-         <button class="accountInfo-followMeButton">Подписаться</button>
-       </div>
-       <div class="accountInfo-Middle">
-         <div class="accountInfo-postsNumber">100 публикаций</div>
-         <div class="accountInfo-followers">100 подписчиков</div>
-         <div class="accountInfo-following">100 подписок</div>
-       </div>
-       <div class="accountInfo-bottom">
-         <div class="accountInfo-description">
-            Fashion designer - ESMOD French fashion University 🎓 Beauty, fashion & lifestyle
-         </div>
-       </div>
-     </div>
+   <header id="header_container" class="header">
+     
    </header>
    <hr>
    <section class="photos">
@@ -65,5 +45,39 @@
       </ul>
    </section>
  </div> 
+
+ <template id="header_template">
+  <div class="logo">
+    <a href="" class="logo-link">
+      <img src="" alt="" class="logo-image" data-field="logo">
+    </a>
+  </div>
+  <div class="accountInfo">
+    <div class="accountInfo-top">
+      <div class="accountInfo-username" data-field="username">natali_bystrova</div>
+      <button class="accountInfo-followMeButton">Подписаться</button>
+    </div>
+    <div class="accountInfo-Middle">
+      <div class="accountInfo-postsNumber">
+        <span data-field="posts_count"></span>
+        публикаций
+      </div>
+      <div class="accountInfo-followers">
+        <span data-field="folowers"></span>
+        подписчиков
+      </div>
+      <div class="accountInfo-following">
+        <span data-field="following"></span>
+        подписок
+      </div>
+    </div>
+    <div class="accountInfo-bottom">
+      <div class="accountInfo-description" data-field="description">
+         Fashion designer - ESMOD French fashion University 🎓 Beauty, fashion & lifestyle
+      </div>
+    </div>
+  </div>
+ </template>
+
 </body>
 </html>

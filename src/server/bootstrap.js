@@ -26,7 +26,8 @@ module.exports = function(app) {
             description: 'Fashion designer - ESMOD French fashion University 🎓 Beauty, fashion & lifestyle',
             folowers: 123,
             following: 321,
-            posts_count: 322
+            posts_count: 322,
+            src: 'img/me.jpg'
         });
     });
 
