@@ -14,34 +14,7 @@
    </header>
    <hr>
    <section class="photos">
-      <ul class="photos-list">
-        <li class="photos-item">
-          <img class="photos-img" src="img/1.jpg" alt="">
-        </li>
-        <li class="photos-item">
-          <img class="photos-img" src="img/2.jpg" alt="">
-        </li>
-        <li class="photos-item">
-          <img class="photos-img" src="img/3.jpg" alt="">
-        </li>
-        <li class="photos-item">
-          <img class="photos-img" src="img/4.jpg" alt="">
-        </li>
-        <li class="photos-item">
-          <img class="photos-img" src="img/5.jpg" alt="">
-        </li>
-        <li class="photos-item">
-          <img class="photos-img" src="img/6.jpg" alt="">
-        </li>
-        <li class="photos-item">
-          <img class="photos-img" src="img/1.jpg" alt="">
-        </li>
-        <li class="photos-item">
-          <img class="photos-img" src="img/2.jpg" alt="">
-        </li>
-        <li class="photos-item">
-          <img class="photos-img" src="img/3.jpg" alt="">
-        </li>
+      <ul class="photos-list" id="posts_container">
       </ul>
    </section>
  </div> 
@@ -77,6 +50,12 @@
       </div>
     </div>
   </div>
+ </template>
+
+ <template id="post_template">
+  <li class="photos-item">
+   <img id = "image"class="photos-img" src="" alt="" data-field="photo">
+ </li>
  </template>
 
 </body>

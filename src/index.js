@@ -1,38 +1,23 @@
 require('./css/style.css');
 
-const axios = require('axios');
+const renderHeader = require('./components/header.js')
+const renderPost = require('./components/post.js')
 
 const headerTemplate = document.querySelector('#header_template');
 const headerContainer = document.querySelector('#header_container');
 
-function renderHeader() {
+const postTemplate = document.querySelector('#post_template');
+const postsContainer = document.querySelector('#posts_container');
 
-  axios.get('/user')
-  .then(({ data} ) =>{
- 
-   headerContainer.innerHTML = headerTemplate.innerHTML;
- 
-   const {
-     user_name,
-     user_nic,
-     description,
-     folowers,
-     following,
-     posts_count,
-     src
-   } = data;
- 
-   headerContainer.querySelector('[data-field="username"]').innerHTML = user_name;
-   headerContainer.querySelector('[data-field="posts_count"]').innerHTML = posts_count;
-   headerContainer.querySelector('[data-field="folowers"]').innerHTML = folowers;
-   headerContainer.querySelector('[data-field="following"]').innerHTML = following;
-   headerContainer.querySelector('[data-field="description"]').innerHTML = description;
-   headerContainer.querySelector('[data-field="logo"]').src = src; 
-  });
+function renderApp() {
+  renderHeader({headerTemplate, headerContainer});
+  renderPost({postTemplate, postsContainer});
 }
 
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
-    renderHeader();
+    renderApp();
   }
 }
+
+
