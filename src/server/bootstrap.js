@@ -18,16 +18,14 @@ const posts = [...Array(6)].map((val, i) => ({
     likes: random(20, 100)
 }));
 
-module.exports = function(app) {
+module.exports = function(app, db) {
     app.get('/user', (req, res) => {
-        return res.json({
-            user_name: 'Natalia Bystrova',
-            user_nic: 'natali_bystrova',
-            description: 'Fashion designer - ESMOD French fashion University 🎓 Beauty, fashion & lifestyle',
-            folowers: 123,
-            following: 321,
-            posts_count: 322,
-            src: 'img/me.jpg'
+        // ищем пользователя с ником "natali_bystrova"
+        db.collection('users').find({
+            user_nic: 'natali_bystrova'
+        }).toArray((err, data) => {
+            const [ currentUser ] = data;
+            return res.json(currentUser);
         });
     });
 

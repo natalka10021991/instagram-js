@@ -2,7 +2,7 @@ const axios = require('axios');
 
 function renderHeader({headerTemplate, headerContainer}) {
 
- axios.get('/user')
+axios.get('/user')
  .then(({ data} ) =>{
 
   headerContainer.innerHTML = headerTemplate.innerHTML;
