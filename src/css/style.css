@@ -92,3 +92,45 @@ body {
   .photos-img {
     width: 100%;
   }
+
+.postModal-wrapper {
+  display: none;
+  background: rgba( 0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.postModal {
+  width: 800px;
+  height: 600px;
+  background: white;
+  position: relative;
+}
+
+.btnClose {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.btnClose-icon {
+  width: 100%;
+}
+
+.postModal-content {
+  display: flex;
+}
+
+.postModal-photo {
+  display: block;
+  width: 70%;
+}
