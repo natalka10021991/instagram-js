@@ -1,5 +1,7 @@
 const axios = require('axios');
 
+const renderModal = require('./modal.js')
+
 function renderPost({ postTemplate, postsContainer }) {
   axios.get('/posts')
     .then(({ data } ) => {
@@ -15,26 +17,12 @@ function renderPost({ postTemplate, postsContainer }) {
 
         const concreteElement = element.firstElementChild;
 
-        const modalTemplate = document.querySelector('#modal_template');
-        const modalElement = document.createElement('div');
-        modalElement.classList.add('postModal-wrapper')
-        modalElement.innerHTML = modalTemplate.innerHTML;
-
-        const imageModal = modalElement.querySelector('[data-field="photoModal"]');
-        imageModal.src = src;
-
         postsContainer.appendChild(concreteElement);
         concreteElement.addEventListener('click', (event) => {
           console.log(post);
-          document.body.appendChild(modalElement);
+          renderModal(src, description);
 
         });
-
-        const closeButton = modalElement.querySelector('.btnClose');
-        closeButton.addEventListener('click', function(e) {
-          e.preventDefault;
-          document.body.removeChild(modalElement);
-        })
       });
     });
 }

@@ -134,3 +134,19 @@ body {
   display: block;
   width: 70%;
 }
+
+.postModal-description {
+  padding: 10px;
+}
+
+.postModal-description .accountInfo-followMeButton {
+  margin-bottom: 10px;
+}
+
+.postModal-userName {
+  margin-bottom: 10px;
+}
+
+.postModal-imageDescription {
+  margin-bottom: 20px;
+}
