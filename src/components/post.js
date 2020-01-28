@@ -6,22 +6,22 @@ function renderPost({ postTemplate, postsContainer }) {
   axios.get('/posts')
     .then(({ data } ) => {
       data.forEach((post) => {
-        const { src, description } = post;
+        const { thumb, description } = post;
         const element = document.createElement('div');
        
         element.innerHTML = postTemplate.innerHTML;
 
+        const bg = element.querySelector('[data-field="bg"]');
         const image = element.querySelector('[data-field="photo"]');
-        image.src = src;
+        image.src = thumb;
         image.title = description;
+        bg.src = thumb;
 
         const concreteElement = element.firstElementChild;
 
         postsContainer.appendChild(concreteElement);
         concreteElement.addEventListener('click', (event) => {
-          console.log(post);
-          renderModal(src, description);
-
+          renderModal(post);
         });
       });
     });

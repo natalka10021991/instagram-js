@@ -17,6 +17,8 @@
       <ul class="photos-list" id="posts_container">
       </ul>
    </section>
+
+   <div class="hidden-container"></div> 
  </div> 
  
 
@@ -54,8 +56,13 @@
  </template>
 
  <template id="post_template">
-  <li class="photos-item">
-   <img id = "image"class="photos-img" src="" alt="" data-field="photo">
+  <li class="photos-item item">
+    <div class="item-container item-container--bg">
+      <img src="" alt="" data-field="bg">
+      </div>
+    <div class="item-container item-container--main">
+      <img src="" alt="" data-field="photo">
+    </div>
  </li>
  </template>
 

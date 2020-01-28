@@ -83,6 +83,37 @@ body {
     width: 32%;
     margin-right: 2%;
     margin-bottom: 2%;
+    position: relative;
+    padding: 16% 0;
+    box-sizing: border-box;
+  }
+
+  .item-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .item-container--bg img {
+    height: 100%;
+    object-fit: cover;
+    filter: blur(2px);
+    margin: -2%;
+  }
+
+  .item-container--main {
+    z-index: 2;
+  }
+
+  .item-container--main img {
+    width: 100%;
   }
   
   .photos-item:nth-child(3n+3) {
@@ -104,6 +135,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 .postModal {
@@ -133,6 +165,7 @@ body {
 .postModal-photo {
   display: block;
   width: 70%;
+  min-width: 70%;
 }
 
 .postModal-description {
@@ -149,4 +182,9 @@ body {
 
 .postModal-imageDescription {
   margin-bottom: 20px;
+}
+
+.hidden-container {
+  position: fixed;
+  left: 200%;
 }
