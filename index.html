@@ -17,6 +17,7 @@
       <ul class="photos-list" id="posts_container">
       </ul>
    </section>
+   <div class="hidden-container"></div>
  </div> 
  
 
@@ -54,29 +55,17 @@
  </template>
 
  <template id="post_template">
-  <li class="photos-item">
-   <img id = "image"class="photos-img" src="" alt="" data-field="photo">
+  <li class="photos-item item">
+    <div class="item-container item-container--bg">
+      <img src="" alt="" data-field="bg">
+    </div>
+    <div class="item-container item-container--main">
+        <img src="" alt="" data-field="photo">
+      </div>
  </li>
  </template>
 
- <template id="modal_template">
-    <div class="postModal">
-      <a href="#" class="btnClose">
-        <img src="/icons/close.svg" alt="" class="btnClose-icon" > 
-      </a>
-      <div class="postModal-content">
-        <img src="" alt="" class="postModal-photo" data-field="photoModal">
-        <div class="postModal-description">
-         <div class="postModal-userName" data-field="userNameModal">Natalia Bystrova</div>
-          <button class="accountInfo-followMeButton">Подписаться</button>
-          <div class="postModal-imageDescription" data-field="imageDescriptionModal"></div>
-          <div class="postModal-comments">Cool</div>
-          <div class="postModal-addInfo"><Likes/div>
-        </div>
-      </div>
-    </div>
 
- </template>
 
 </body>
 </html>

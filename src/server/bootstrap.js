@@ -12,8 +12,9 @@ const lorem = new LoremIpsum({
     }
 });
 
-const posts = [...Array(6)].map((val, i) => ({
+const posts = [...Array(7)].map((val, i) => ({
     src: `/img/${i+1}.jpg`,
+    thumb: `/img/${i+1}.thumb.jpg`,
     description: lorem.generateSentences(random(2, 7)),
     likes: random(20, 100)
 }));

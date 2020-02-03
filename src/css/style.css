@@ -83,6 +83,9 @@ body {
     width: 32%;
     margin-right: 2%;
     margin-bottom: 2%;
+    position: relative;
+    padding: 16% 0;
+    box-sizing: border-box;
   }
   
   .photos-item:nth-child(3n+3) {
@@ -90,6 +93,34 @@ body {
   }
   
   .photos-img {
+    width: 100%;
+  }
+
+  .item-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .item-container--bg img {
+    height: 100%;
+    object-fit: cover;
+    filter: blur(2px);
+    margin: -2%;
+  }
+
+  .item-container--main {
+    z-index: 2;
+  }
+
+  .item-container--main img {
     width: 100%;
   }
 
@@ -104,6 +135,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 3;
 }
 
 .postModal {
@@ -128,15 +160,43 @@ body {
 
 .postModal-content {
   display: flex;
+  height: 100%;
 }
 
-.postModal-photo {
-  display: block;
+.postModal-image {
   width: 70%;
+  position: relative;
+}
+
+.postModal-imageContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.postModal-imageContainer--bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+  margin: -2%;
+}
+
+.postModal-imageContainer--main img {
+  display: block;
+  width: 100%;
 }
 
 .postModal-description {
   padding: 10px;
+  width: 30%;
 }
 
 .postModal-description .accountInfo-followMeButton {
@@ -149,4 +209,9 @@ body {
 
 .postModal-imageDescription {
   margin-bottom: 20px;
+}
+
+.hidden-container {
+ position: fixed;
+ left: 200%;
 }
