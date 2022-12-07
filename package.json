@@ -1,7 +1,7 @@
 {
   "private": true,
   "devDependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-middleware": "^3.7.2",
